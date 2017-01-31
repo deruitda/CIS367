@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="webgl-utils.js"></script>
+    <script type="text/javascript" src="render.js"></script>
+    <script type="text/javascript" src="shader-utils.js"></script>
+    <title>My First WebGL</title>
+</head>
+<body onload="main()">
+<p>Hello World!</p>
+<canvas id="my-canvas" width="512" height="512">
+    Your browser does not support &lt;canvas&gt;
+</canvas>
+
+<img src="code1.PNG">
+<img src="code2.PNG">
+<p>gl.LINES: Draws a line between adjacent vertices</p>
+<hr>
+<p>gl.LINE_STRIP: Draws lines between each adjacent vertices, but does not connect the first and last vertices</p>
+<hr>
+<p>gl.LINE_LOOP: Draws lines between each adjacent vertices including the start and end vertices</p>
+</body>
+</html>
