@@ -5,8 +5,7 @@ var modelMat = mat4.create();
 var canvas, paramGroup;
 var posAttr, colAttr, modelUnif;
 var gl;
-var obj;
-
+var house;
 function main() {
   canvas = document.getElementById("gl-canvas");
 
@@ -44,9 +43,9 @@ function main() {
 function drawScene() {
   gl.clear(gl.DEPTH_BUFFER_BIT | gl.COLOR_BUFFER_BIT);
 
-  if (obj) {
-    obj.draw(posAttr, colAttr, modelUnif, modelMat);
-  }
+    if (house) {
+        house.draw(posAttr, colAttr, modelUnif, modelMat);
+    }
 }
 
 function render() {
@@ -55,11 +54,8 @@ function render() {
 }
 
 function createObject() {
-  obj = null;
-  mat4.identity(modelMat);
-  var size = .9;
-  var subDiv =20;
-  obj = new Cube(gl,size, subDiv);
+    mat4.identity(modelMat);
+    house = new House(gl);
 }
 
 function resizeWindow() {
