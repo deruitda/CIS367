@@ -55,17 +55,17 @@ function main() {
 
     topViewMat = mat4.create();
     mat4.lookAt(topViewMat,
-        vec3.fromValues(0, 2, 0),
+        vec3.fromValues(-2.5, 0, 0),
         vec3.fromValues(0, 0, 0),
-        vec3.fromValues(0, 0, 1));
+        vec3.fromValues(0, 1, 0));
 
     persProjMat = mat4.create();
 
     viewMat = mat4.create();
     mat4.lookAt(viewMat,
-        vec3.fromValues(-2.5, 0, 0),
+        vec3.fromValues(0, 2, 0),
         vec3.fromValues(0, 0, 0),
-        vec3.fromValues(0, 1, 0));
+        vec3.fromValues(0, 0, 1));
 
     houseCF = mat4.create();
     gl.uniformMatrix4fv(modelUnif, false, houseCF);
@@ -154,19 +154,20 @@ function drawSide(){
 
 function resizeHandler() {
     canvas.width = window.innerWidth;
-    canvas.height = 0.9 * window.innerHeight;
-    if (canvas.width > canvas.height) { /* landscape */
-        var ratio = 2 * canvas.height / canvas.width;
-        console.log("Landscape mode, ratio is " + ratio);
-        mat4.ortho(orthoProjMat, -3, 3, -3 * ratio, 3 * ratio, -5, 5);
-        mat4.perspective(persProjMat,
-            Math.PI/3,  /* 60 degrees vertical field of view */
-            1/ratio,    /* must be width/height ratio */
-            1,          /* near plane at Z=1 */
-            20);        /* far plane at Z=20 */
-    } else {
-        alert ("Window is too narrow!");
-    }
+    canvas.height = window.innerHeight;
+
+    var orthoRatio = canvas.height / canvas.width;
+    var perspectiveRatio = 1/orthoRatio; // must be width/height ratio
+    var perspectiveRad = Math.PI/5; // 60 degrees vertical field of view
+
+    // Set orthographic view (for front, top, and side view)
+    mat4.ortho(orthoProjMat, -1, 1, -1 * orthoRatio, 1 * orthoRatio, -3, 3);
+    // Set perspective 3D view
+    mat4.perspective(persProjMat,
+        perspectiveRad,    // Angle to view at
+        perspectiveRatio,  // Aspect Ratio
+        1,                 // near plane at Z=1
+        20);
 }
 
 function checkKey(e){
