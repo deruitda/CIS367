@@ -17,7 +17,7 @@ class Tree {
         this.truncone = new TruncCone(gl, radiusBottom, radiusTop, height, div, stacks, brown1, brown2);
         this.cylTrans = mat4.create();
         mat4.translate(this.cylTrans, this.cylTrans, vec3.fromValues(treeX, treeY, treeZ));
-        mat4.scale(this.cylTrans, this.cylTrans, vec3.fromValues(0.25, 0.6, 1));
+        mat4.scale(this.cylTrans, this.cylTrans, vec3.fromValues(0.25, 0.6, .25));
         mat4.rotateX(this.cylTrans, this.cylTrans, -(Math.PI/2));
 
         var green1 = vec3.fromValues(0.184314, 0.309804, 0.184314);
@@ -25,13 +25,13 @@ class Tree {
         this.cone1 = new Cone(gl, 0.3, 0.5, 100, stacks, green1, green2);
         this.cone1Trans = mat4.create();
         mat4.translate(this.cone1Trans, this.cone1Trans, vec3.fromValues(treeX, treeY+.2, treeZ));
-        mat4.scale(this.cone1Trans, this.cone1Trans, vec3.fromValues(0.9, 1, 1));
+        mat4.scale(this.cone1Trans, this.cone1Trans, vec3.fromValues(0.9, 1, .9));
         mat4.rotateX(this.cone1Trans, this.cone1Trans, -(Math.PI/2));
 
         this.cone2 = new Cone(gl, 0.3, 0.5, 100, stacks, green1, green2);
         this.cone2Trans = mat4.create();
         mat4.translate(this.cone2Trans, this.cone2Trans, vec3.fromValues(treeX, treeY+.4, treeZ));
-        mat4.scale(this.cone2Trans, this.cone2Trans, vec3.fromValues(0.8, 1, 1));
+        mat4.scale(this.cone2Trans, this.cone2Trans, vec3.fromValues(0.8, 1, .8));
         mat4.rotateX(this.cone2Trans, this.cone2Trans, -(Math.PI/2));
         this.tmp = mat4.create();
 

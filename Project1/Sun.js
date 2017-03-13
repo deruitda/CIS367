@@ -15,7 +15,7 @@ class Sun {
         this.sphere = new Sphere(gl, sphereRad, latlines, longlines, yellow, orange);
         this.sphereTrans = mat4.create();
         mat4.translate(this.sphereTrans, this.sphereTrans, vec3.fromValues(sphereX, sphereY, sphereZ));
-        mat4.scale(this.sphereTrans, this.sphereTrans, vec3.fromValues(0.4, 0.4, 1));
+        mat4.scale(this.sphereTrans, this.sphereTrans, vec3.fromValues(0.4, 0.4, .4));
         this.tmp = mat4.create();
 
     }

@@ -3,8 +3,8 @@
  */
 class House {
     constructor(gl){
-        var coneX = 0.45;
-        var coneY = -.1;
+        var coneX = 0.36;
+        var coneY = -.05;
         var coneZ = 0;
         var size = .9;
         var subDiv =20;
@@ -22,8 +22,10 @@ class House {
         var grey2 = vec3.fromValues(0.329412, 0.329412, 0.329412);
         this.cone = new Cone(gl, coneRad,coneheight, coneDiv, coneStax, grey1, grey2);
         this.coneTrans = mat4.create();
+        mat4.scale(this.coneTrans, this.coneTrans, vec3.fromValues(1.25, 1, 1.35));
         mat4.translate(this.coneTrans, this.coneTrans, vec3.fromValues(coneX, coneY, coneZ));
         mat4.rotateX(this.coneTrans, this.coneTrans, -(Math.PI/2));
+        mat4.rotateZ(this.coneTrans, this.coneTrans, -(Math.PI/4));
 
         var cream1 = vec3.fromValues(0.623529, 0.623529, 0.372549);
         var cream2 = vec3.fromValues(0.68, 0.623529, 0.372549);
