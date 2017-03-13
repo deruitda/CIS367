@@ -6,6 +6,9 @@ var canvas, paramGroup;
 var posAttr, colAttr, modelUnif;
 var gl;
 var house;
+var sun;
+var tree;
+var tree2;
 function main() {
   canvas = document.getElementById("gl-canvas");
 
@@ -46,6 +49,18 @@ function drawScene() {
     if (house) {
         house.draw(posAttr, colAttr, modelUnif, modelMat);
     }
+
+    if(sun){
+        sun.draw(posAttr, colAttr, modelUnif, modelMat);
+    }
+
+    if(tree2){
+        tree2.draw(posAttr, colAttr, modelUnif, modelMat);
+    }
+
+    if(tree){
+        tree.draw(posAttr, colAttr, modelUnif, modelMat);
+    }
 }
 
 function render() {
@@ -56,6 +71,9 @@ function render() {
 function createObject() {
     mat4.identity(modelMat);
     house = new House(gl);
+    sun = new Sun(gl);
+    tree = new Tree(gl, -0.7, -0.7, 1);
+    tree2 = new Tree(gl, -0.4, -0.6, 1);
 }
 
 function resizeWindow() {
