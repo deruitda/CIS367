@@ -31,8 +31,8 @@
       <file leaf-file-name="render.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/render.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1678">
-              <caret line="120" column="19" lean-forward="false" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
+            <state relative-caret-position="106">
+              <caret line="51" column="27" lean-forward="false" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -65,8 +65,8 @@
       <file leaf-file-name="House.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/House.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="820">
-              <caret line="55" column="55" lean-forward="false" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+            <state relative-caret-position="920">
+              <caret line="48" column="70" lean-forward="false" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
               <folding>
                 <element signature="n#!!doc;n#House#0" expanded="false" />
               </folding>
@@ -113,10 +113,10 @@
         <option value="$PROJECT_DIR$/vshader.glsl" />
         <option value="$PROJECT_DIR$/Sun.js" />
         <option value="$PROJECT_DIR$/Tree.js" />
-        <option value="$PROJECT_DIR$/render.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/door.js" />
         <option value="$PROJECT_DIR$/House.js" />
+        <option value="$PROJECT_DIR$/render.js" />
       </list>
     </option>
   </component>
@@ -251,12 +251,12 @@
       <workItem from="1489258545225" duration="6020000" />
       <workItem from="1489364224560" duration="593000" />
       <workItem from="1489438954379" duration="6482000" />
-      <workItem from="1489507718509" duration="2735000" />
+      <workItem from="1489507718509" duration="3621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24192000" />
+    <option name="totallyTimeSpent" value="25078000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -264,7 +264,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -632,8 +632,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/House.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
-          <caret line="55" column="55" lean-forward="false" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+        <state relative-caret-position="920">
+          <caret line="48" column="70" lean-forward="false" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
           <folding>
             <element signature="n#!!doc;n#House#0" expanded="false" />
           </folding>
@@ -642,8 +642,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/render.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1678">
-          <caret line="120" column="19" lean-forward="false" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
+        <state relative-caret-position="106">
+          <caret line="51" column="27" lean-forward="false" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
           <folding />
         </state>
       </provider>

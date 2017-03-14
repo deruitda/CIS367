@@ -55,9 +55,9 @@ function main() {
 
     topViewMat = mat4.create();
     mat4.lookAt(topViewMat,
-        vec3.fromValues(-2.5, 0, 0),
+        vec3.fromValues(0, 2, 0),
         vec3.fromValues(0, 0, 0),
-        vec3.fromValues(0, 1, 0));
+        vec3.fromValues(0, 0, 1));
 
     frontViewMat = mat4.create();
     mat4.lookAt(frontViewMat,
@@ -69,9 +69,9 @@ function main() {
 
     viewMat = mat4.create();
     mat4.lookAt(viewMat,
-        vec3.fromValues(0, 2, 0),
+        vec3.fromValues(0, 0, 3),
         vec3.fromValues(0, 0, 0),
-        vec3.fromValues(0, 0, 1));
+        vec3.fromValues(0, 1, 0));
 
     houseCF = mat4.create();
     gl.uniformMatrix4fv(modelUnif, false, houseCF);
@@ -112,7 +112,7 @@ function render() {
     gl.clear(gl.DEPTH_BUFFER_BIT | gl.COLOR_BUFFER_BIT);
 switch (viewDir){
     case 0:
-        draw3D();
+        drawRealSide();
         break;
     case 1:
         drawTop();
@@ -135,19 +135,19 @@ function createObject() {
     tree2 = new Tree(gl, -0.4, -0.6, -.5);
 }
 
-function draw3D() {
+function drawRealSide() {
     /* We must update the projection and view matrices in the shader */
     gl.uniformMatrix4fv(projUnif, false, persProjMat);
     gl.uniformMatrix4fv(viewUnif, false, viewMat)
-    gl.viewport(0, 0, canvas.width/2, canvas.height);
+    gl.viewport(0, 0, canvas.width, canvas.height);
     drawScene();
 }
 
 
 function drawTop() {
-    gl.uniformMatrix4fv(projUnif, false, orthoProjMat);
-    gl.uniformMatrix4fv(viewUnif, false, topViewMat);
-    gl.viewport(canvas.width, 0, canvas.width, canvas.height);
+    gl.uniformMatrix4fv(projUnif, false, persProjMat);
+    gl.uniformMatrix4fv(viewUnif, false, topViewMat)
+    gl.viewport(0, 0, canvas.width, canvas.height);
     drawScene();
 }
 

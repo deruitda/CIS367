@@ -36,13 +36,17 @@ class House {
 
         this.door = new Door(gl);
         this.doorTrans = mat4.create();
-        mat4.translate(this.doorTrans, this.doorTrans, vec3.fromValues(0, -.3, 0));
+        mat4.translate(this.doorTrans, this.doorTrans, vec3.fromValues(.05, -.45, 0));
 
         this.tmp = mat4.create();
     }
 
     draw(vertexAttr, colorAttr, modelUniform, coordFrame){
         gl.uniformMatrix4fv(modelUniform, false, coordFrame);
+
+        this.tmp = mat4.create();
+        mat4.mul(this.tmp, coordFrame, this.doorTrans);
+        this.door.draw(vertexAttr, colorAttr, modelUniform, this.tmp);
 
         this.tmp = mat4.create();
         mat4.mul(this.tmp, coordFrame, this.cubeScale);
@@ -52,8 +56,5 @@ class House {
         mat4.mul(this.tmp, coordFrame, this.coneTrans);
         this.cone.draw(vertexAttr, colorAttr, modelUniform, this.tmp);
 
-        this.tmp = mat4.create();
-        mat4.mul(this.tmp, coordFrame, this.doorTrans);
-        this.door.draw(vertexAttr, colorAttr, modelUniform, this.tmp);
     }
 }
