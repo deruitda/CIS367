@@ -9,6 +9,7 @@ var house;
 var sun;
 var tree;
 var tree2;
+var grass;
 var viewMat, sideViewMat, topViewMat, frontViewMat;
 var houseCF;
 var projUnif, projUnif;
@@ -106,6 +107,15 @@ function drawScene() {
     if(tree){
         tree.draw(posAttr, colAttr, modelUnif, modelMat);
     }
+    if(grass){
+        var grassTrans = mat4.create();
+        mat4.scale(grassTrans, grassTrans, vec3.fromValues(6, .3, 6));
+        mat4.translate(grassTrans, grassTrans, vec3.fromValues(0, -3, 0));
+        var tmp = mat4.create();
+
+        mat4.mul(tmp, modelMat, grassTrans);
+        this.grass.draw(posAttr, colAttr, modelUnif, tmp);
+    }
 }
 
 function render() {
@@ -133,6 +143,10 @@ function createObject() {
     sun = new Sun(gl);
     tree = new Tree(gl, -0.5, -0.6, .5);
     tree2 = new Tree(gl, -0.4, -0.6, -.5);
+
+    var green1 = vec3.fromValues(0.184314, 0.309804, 0.184314);
+    var green2 = vec4.fromValues(0.137255, 0.556863, 0.137255);
+    grass = new Cube(gl, .8, 50, green1, green2);
 }
 
 function drawRealSide() {
