@@ -9,7 +9,7 @@ var house;
 var sun;
 var tree;
 var tree2;
-var viewMat, sideViewMat, topViewMat;
+var viewMat, sideViewMat, topViewMat, frontViewMat;
 var houseCF;
 var projUnif, projUnif;
 var orthoProjMat, persProjMat;
@@ -49,12 +49,18 @@ function main() {
 
     sideViewMat = mat4.create();
     mat4.lookAt(sideViewMat,
-        vec3.fromValues(2, 0, 0),
+        vec3.fromValues(2.5, 0, 0),
         vec3.fromValues(0, 0, 0),
         vec3.fromValues(0, 1, 0));
 
     topViewMat = mat4.create();
     mat4.lookAt(topViewMat,
+        vec3.fromValues(-2.5, 0, 0),
+        vec3.fromValues(0, 0, 0),
+        vec3.fromValues(0, 1, 0));
+
+    frontViewMat = mat4.create();
+    mat4.lookAt(frontViewMat,
         vec3.fromValues(-2.5, 0, 0),
         vec3.fromValues(0, 0, 0),
         vec3.fromValues(0, 1, 0));
@@ -112,7 +118,7 @@ switch (viewDir){
         drawTop();
         break;
     case 2:
-        drawSide();
+        drawFront();
         break;
     case 3:
         drawSide();
@@ -148,6 +154,13 @@ function drawTop() {
 function drawSide(){
     gl.uniformMatrix4fv(projUnif, false, orthoProjMat);
     gl.uniformMatrix4fv(viewUnif, false, sideViewMat);
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    drawScene();
+}
+
+function drawFront(){
+    gl.uniformMatrix4fv(projUnif, false, orthoProjMat);
+    gl.uniformMatrix4fv(viewUnif, false, frontViewMat);
     gl.viewport(0, 0, canvas.width, canvas.height);
     drawScene();
 }
